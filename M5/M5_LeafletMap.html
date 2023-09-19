@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Leaflet Web Map</title>
+
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
+   integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+   crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+   integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
+   crossorigin=""></script>
+ 
+ <style>
+    body
+    {
+        position: relative;
+        height: 100%;
+        background-color: #273a43;
+    }
+
+    html
+    {
+        scroll-behavior: smooth;
+    }
+
+    #map {
+    width: 1500px;
+    height: 1500px;
+    } 
+ </style>
+
+</head>
+
+<body>
+    <center>
+        <div id="map"></div>
+    </center>
+<script>
+    var map = L.map('map',{
+        center:[-7.6078738, 110.203751],
+        zoom: 20
+    });
+
+    L.tileLayer('https://mt0.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            maxZoom: 20, 
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        })
+             .addTo(map);
+
+    var marker = L.marker([-7.6078738, 110.2037513]).
+    bindPopup('<center><h2>Candi Borobudur</h2><justify>Candi Borobudur adalah sebuah candi Buddha yang terletak di Borobudur, Magelang, Jawa Tengah, Indonesia.<br><br><img src="https://fatek.umsu.ac.id/wp-content/uploads/2023/06/Candi-Borobudur-Makna-Yang-Terkandung-di-Dalamnya.jpg" width="150px" height="100px"></center>').addTo(map);  
+    
+    var marker = L.marker([-7.6047694, 110.230002]).
+    bindPopup('<center><h2>Candi Mendut</h2><justify>Candi Mendut adalah sebuah candi bercorak Buddha. Candi yang terletak di Desa Mendut, Jalan Mayor Kusen Kota Mungkid, Kabupaten Magelang, Jawa Tengah.<br><br><img src="https://www.geosynthetica.net/wp-content/uploads/2023/07/Candi-Mendut-Magelang.jpg" width="150px" height="100px"></center>').addTo(map);
+
+    var marker = L.marker([-7.7520206, 110.4914674]).
+    bindPopup('<center><h2>Candi Prambanan</h2><justify>Candi Prambanan adalah bangunan candi bercorak agama Hindu terbesar di Indonesia yang dibangun pada abad ke-9 Masehi.<br><br><img src="https://mytrip123.com/wp-content/uploads/2022/04/candi-prambanan-1.jpg" width="150px" height="100px"></center>').addTo(map);
+
+    var marker = L.marker([-7.60583333, 110.21944444]).
+    bindPopup('<center><h2>Candi Pawon</h2><justify>Candi Pawon adalah nama sebuah candi, peninggalan Masa Klasik, yang terletak di Dusun Brojonalan, Desa Wanurejo, Kecamatan Borobudur, Kabupaten Magelang.<br><br><img src="https://unimmafm.com/wp-content/uploads/2022/09/Candi-pawon.jpg" width="150px" height="100px"></center>').addTo(map);
+
+</script>
+</body>
+</html>
